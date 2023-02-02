@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class DoorManager : MonoBehaviour
 {
+    public DoorManager door = new DoorManager;
+    
     public int speed = 1;
 
     private Vector3 goUp = new Vector3(0, 0, 0);
     private Vector3 startPos = new Vector3(0, 0, 0);
 
-    public static bool up = false;
+    public bool up = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +19,7 @@ public class DoorManager : MonoBehaviour
         startPos = transform.position;
         goUp = startPos;
         goUp.y = startPos.y + 5;
+
     }
 
     // Update is called once per frame

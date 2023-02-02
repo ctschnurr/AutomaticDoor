@@ -7,7 +7,8 @@ public class DoorTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        door = gameObject.AddComponent<DoorManager>() as DoorManager;
+
     }
 
     // Update is called once per frame
@@ -16,20 +17,20 @@ public class DoorTrigger : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            DoorManager.up = true;
+            DoorManager.door.up = true;
 
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            DoorManager.up = false;
+            DoorManager.door.up = false;
 
         }
     }
