@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class DoorTrigger : MonoBehaviour
 {
+    public DoorManager door;
     // Start is called before the first frame update
     void Start()
     {
-        door = gameObject.AddComponent<DoorManager>() as DoorManager;
+
 
     }
 
@@ -21,7 +22,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            DoorManager.door.up = true;
+            door.up = true;
 
         }
     }
@@ -30,7 +31,7 @@ public class DoorTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            DoorManager.door.up = false;
+            door.up = false;
 
         }
     }
